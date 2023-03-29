@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display:flex;
+    flex-direction:row;
+}
+
+.tasks {
+    flex-grow:2;
+}
