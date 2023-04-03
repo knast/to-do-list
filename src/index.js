@@ -1,3 +1,4 @@
+import addProjectForm from './addProjectForm.js';
 
 (() => {
 
@@ -17,12 +18,17 @@
     projectsBtn.classList.add('add-projects');
     projectsBtn.textContent = '+Add Project';
     projects.appendChild(projectsBtn);
+    const addProjectsBtn = document.querySelector('.add-projects');
 
     const tasksBtn = document.createElement('button');
     tasksBtn.classList.add('add-tasks');
     tasksBtn.textContent = '+Add Task';
     tasks.appendChild(tasksBtn);
 
+
+    addProjectsBtn.addEventListener('click', () => {
+        addProjectForm();
+    })
     
 
 })()

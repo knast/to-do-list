@@ -45,8 +45,31 @@ body {
 .projects {
     background-color:#10b981;
     
+    
 }
 
 .tasks {
     background-color:#34d399;
+}
+
+.buttons {
+    display:flex;
+    margin:0 auto;
+
+}
+
+br {
+    border:1px solid black;
+}
+
+.input-section {
+    display:flex;
+    flex-direction:column;
+
+}
+
+.add-form {
+    width:60%;
+    margin:30px auto;
+    font-family:inherit;
 }
