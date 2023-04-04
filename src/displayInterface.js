@@ -1,6 +1,24 @@
-export default function addProjectForm() {
+export default function displayInterface() {
 
-    const projectsTab = document.querySelector('.projects');
+    const body = document.querySelector('body');
+    const projectsTab = document.createElement('div');
+    projectsTab.classList.add('projects');
+    body.appendChild(projectsTab);
+
+    const tasksTab = document.createElement('div');
+    tasksTab.classList.add('tasks');
+    body.appendChild(tasksTab);
+
+    const projects = document.querySelector('.projects');
+    const tasks = document.querySelector('.tasks');
+
+    const projectsBtn = document.createElement('button');
+    projectsBtn.classList.add('add-projects');
+    projectsBtn.textContent = '+Add Project';
+    projects.appendChild(projectsBtn);
+    const addProjectsBtn = document.querySelector('.add-projects');
+
+    
     const addProject = document.createElement('div');
     addProject.classList.add('add-form');
 
@@ -46,11 +64,7 @@ export default function addProjectForm() {
     addBtn.textContent = 'Add Project';
 
     buttonSection.appendChild(addBtn);
-    
 
-    
-
-    
 
 
 }
