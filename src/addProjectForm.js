@@ -15,7 +15,12 @@ export default function addProjectForm() {
     form.classList.add("input-section");
     projectsAddForm.appendChild(form);
     const addForm = document.querySelector('.input-section');
+    const labelName = document.createElement('label');
+    labelName.setAttribute('id', 'name-project');
+    labelName.textContent = 'Name:'
     const inputName = document.createElement('input');
+    inputName.setAttribute('id', 'name-project');
+    addForm.appendChild(labelName);
     addForm.appendChild(inputName);    
     
     const buttons = document.createElement('div');

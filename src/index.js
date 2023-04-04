@@ -25,10 +25,15 @@ import addProjectForm from './addProjectForm.js';
     tasksBtn.textContent = '+Add Task';
     tasks.appendChild(tasksBtn);
 
+    let projectFormState = false;
 
     addProjectsBtn.addEventListener('click', () => {
-        addProjectForm();
+        if(projectFormState == false) { 
+            addProjectForm();
+            projectFormState = true;
+        }
     })
     
 
 })()
+
