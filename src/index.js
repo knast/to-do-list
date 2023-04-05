@@ -1,5 +1,7 @@
 import displayInterface from './displayInterface.js';
 import addProjectForm from './addProjectForm.js';
+import addProjectList from './addProjectList';
+import { compareAsc, format } from 'date-fns';
 
 (() => {
 
@@ -15,6 +17,9 @@ import addProjectForm from './addProjectForm.js';
     const closeBtn = document.querySelector('.close-button');
     const addForm = document.querySelector('.add-form');
     const projectsTab = document.querySelector('.projects');
+    const addBtn = document.querySelector('.add-button');
+    
+    
 
 
     addProjectsBtn.addEventListener('click', () => {
@@ -27,7 +32,30 @@ import addProjectForm from './addProjectForm.js';
         e.preventDefault();
         addForm.style.visibility = 'hidden';
     })
+
+
+    const projectFactory = (projectName, projectDate) => {
+        return {projectName, projectDate};
+    }
+
     
+    
+    addBtn.addEventListener('click', (e) => {
+
+        e.preventDefault();
+        addProjectList();
+        const nameInput = document.querySelector('.input-name').value;
+        const date = format(new Date(), 'yyyy-MM-dd');
+        const project = projectFactory(nameInput, date);
+        const nameOfProject = document.querySelector('.name');
+        const dateOfProject = document.querySelector('.date');
+        nameOfProject.textContent = project.projectName;
+        dateOfProject.textContent = project.projectDate;
+        
+        
+        
+
+    })
     
 
 })()

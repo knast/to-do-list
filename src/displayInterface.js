@@ -45,6 +45,8 @@ export default function displayInterface() {
 
     const inputName = document.createElement('input');
     inputName.setAttribute('id', 'name-project');
+    inputName.setAttribute('type', 'text');
+    inputName.classList.add('input-name');
     addForm.appendChild(labelName);
     addForm.appendChild(inputName);    
     
@@ -64,6 +66,14 @@ export default function displayInterface() {
     addBtn.textContent = 'Add Project';
 
     buttonSection.appendChild(addBtn);
+
+    const projectsListHeader = document.createElement('h3');
+    projectsListHeader.classList.add('list-header');
+    projectsListHeader.textContent = 'Projects';
+    projectsTab.appendChild(projectsListHeader);
+    const projectsList = document.createElement('ul');
+    projectsList.classList.add('projects-list');
+    projectsTab.appendChild(projectsList);
 
 
 
