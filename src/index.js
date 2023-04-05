@@ -59,9 +59,13 @@ import { compareAsc, format } from 'date-fns';
         const projectDate = document.createElement('p');
         projectDate.classList.add(`date-${j}`);
 
+    
+
+
         const projectListItem = document.querySelector(`.project-item${j}`);
         projectListItem.appendChild(projectName);
         projectListItem.appendChild(projectDate);
+        
         
         
 
@@ -79,6 +83,7 @@ import { compareAsc, format } from 'date-fns';
         const projectDate = document.querySelector(`.date-${j}`);
         projectName.textContent = project.projectName;
         projectDate.textContent = project.projectDate;
+        nameInput.value = '';
         
         j++;
         
@@ -91,6 +96,9 @@ import { compareAsc, format } from 'date-fns';
         
 
     })
+
+    
+    
     
 
 })()
