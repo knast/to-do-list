@@ -1,6 +1,6 @@
 import displayInterface from './displayInterface.js';
-import addProjectForm from './addProjectForm.js';
-import addProjectList from './addProjectList';
+import addProjectItem from './addProjectItem.js';
+
 import { compareAsc, format } from 'date-fns';
 
 (() => {
@@ -18,6 +18,8 @@ import { compareAsc, format } from 'date-fns';
     const addForm = document.querySelector('.add-form');
     const projectsTab = document.querySelector('.projects');
     const addBtn = document.querySelector('.add-button');
+    const projectsList = document.querySelector('.projects-list');
+    
     
     
 
@@ -38,19 +40,52 @@ import { compareAsc, format } from 'date-fns';
         return {projectName, projectDate};
     }
 
+    const projects = [];
+    
+    let i = 0;
+    let j = 1;
+
+    
+    
+    
+
+    function addProjectItem() {
+        const projectItem = document.createElement('div');
+        projectItem.classList.add(`project-item${j}`);
+        projectsList.appendChild(projectItem);
+
+        const projectName = document.createElement('p');
+        projectName.classList.add(`name-${j}`);
+        const projectDate = document.createElement('p');
+        projectDate.classList.add(`date-${j}`);
+
+        const projectListItem = document.querySelector(`.project-item${j}`);
+        projectListItem.appendChild(projectName);
+        projectListItem.appendChild(projectDate);
+        
+        
+
+    }
     
     
     addBtn.addEventListener('click', (e) => {
 
         e.preventDefault();
-        addProjectList();
-        const nameInput = document.querySelector('.input-name').value;
+        addProjectItem();
+        const nameInput = document.querySelector('.input-name');
         const date = format(new Date(), 'yyyy-MM-dd');
-        const project = projectFactory(nameInput, date);
-        const nameOfProject = document.querySelector('.name');
-        const dateOfProject = document.querySelector('.date');
-        nameOfProject.textContent = project.projectName;
-        dateOfProject.textContent = project.projectDate;
+        const project = projectFactory(nameInput.value, date);
+        const projectName = document.querySelector(`.name-${j}`);
+        const projectDate = document.querySelector(`.date-${j}`);
+        projectName.textContent = project.projectName;
+        projectDate.textContent = project.projectDate;
+        
+        j++;
+        
+        
+
+
+        
         
         
         

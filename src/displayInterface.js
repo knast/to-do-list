@@ -71,10 +71,14 @@ export default function displayInterface() {
     projectsListHeader.classList.add('list-header');
     projectsListHeader.textContent = 'Projects';
     projectsTab.appendChild(projectsListHeader);
-    const projectsList = document.createElement('ul');
+    const projectsList = document.createElement('div');
     projectsList.classList.add('projects-list');
     projectsTab.appendChild(projectsList);
 
+    const listProject = document.querySelector('.projects-list');
+
+    
+    
 
 
 }
